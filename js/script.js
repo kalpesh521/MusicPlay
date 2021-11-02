@@ -35,17 +35,44 @@ function playMusic() {
 
   playPauseBtn.querySelector("i").innerText = "pause";
   mainAudio.play();
+  musicImg.classList.add("anime");
 }
 
 //pause music function
 function pauseMusic() {
-  // img.classList.remove("anime");
-
   wrapper.classList.remove("paused");
 
   playPauseBtn.querySelector("i").innerText = "play_arrow";
   mainAudio.pause();
+  musicImg.classList.remove("anime");
 }
+// play or pause button event
+playPauseBtn.addEventListener("click", () => {
+  const isMusicPlay = wrapper.classList.contains("paused");
+  //if isPlayMusic is true then call pauseMusic else call playMusic
+  isMusicPlay ? pauseMusic() : playMusic();
+
+  playingSong();
+});
+// let isPlaying = false;
+// // for Play function
+// const playMusic = () => {
+//   isPlaying = true;
+//    mainAudio.play();
+//   play.classList.replace("fa-play", "fa-pause");
+//   img.classList.add("anime");
+// };
+// // for Pause function
+// const pauseMusic = () => {
+//   isPlaying = false;
+//     mainAudio.pause();
+//   play.classList.replace("fa-pause", "fa-play");
+//   img.classList.remove("anime");
+// };
+
+// play.addEventListener("click", () => {
+//   isPlaying ? pauseMusic() : playMusic();
+// });
 
 //prev music function
 function prevMusic() {
@@ -66,15 +93,6 @@ function nextMusic() {
   playMusic();
   playingSong();
 }
-
-// play or pause button event
-playPauseBtn.addEventListener("click", () => {
-  const isMusicPlay = wrapper.classList.contains("paused");
-  //if isPlayMusic is true then call pauseMusic else call playMusic
-  isMusicPlay ? pauseMusic() : playMusic();
-
-  playingSong();
-});
 
 //prev music button event
 prevBtn.addEventListener("click", () => {

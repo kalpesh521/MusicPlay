@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\MuzGo Lite"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "MuzGo Lite"
+	}
+}
